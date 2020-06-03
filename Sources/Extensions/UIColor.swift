@@ -21,7 +21,7 @@ extension UIColor {
         
         return self
     }
-    func toHex() -> String? {
+    public func toHex() -> String? {
         var unsafeRed: CGFloat = 0.0, unsafeGreen: CGFloat = 0.0, unsafeBlue: CGFloat = 0.0
         getRed(&unsafeRed, green: &unsafeGreen, blue: &unsafeBlue, alpha: nil)
         
