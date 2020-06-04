@@ -13,7 +13,7 @@ Simple telegram style color picker build in swift
 ## Installation
 
 ### CocoaPods
-[CocoaPods](https://cocoapods.org) is a dependency manager for Cocoa projects. To integrate telegram-color-picker into your project using CocoaPods, specify it in your `Podfile`:
+[CocoaPods](https://cocoapods.org) is a dependency manager for Cocoa projects. To integrate TelegramColorPicker into your project using CocoaPods, specify it in your `Podfile`:
 
 ```ruby
 pod 'TelegramColorPicker', '~> 1.0.1'
@@ -21,7 +21,6 @@ pod 'TelegramColorPicker', '~> 1.0.1'
 After that use `pod install` command in your terminal.
 
 ### Manually
-
 If you prefer not to use any dependency managers, you can integrate TelegramColorPicker into your project manually by copying `Sources` directory into your project.
 
 ## Usage
