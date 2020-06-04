@@ -15,7 +15,41 @@
 		9D2D850E24879A2B002FB4C6 /* TelegramColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2D850D24879A2B002FB4C6 /* TelegramColorPicker.swift */; };
 		9D2D851024879A49002FB4C6 /* ColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2D850F24879A49002FB4C6 /* ColorPickerView.swift */; };
 		9D2D851224879A5F002FB4C6 /* BrightnessSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2D851124879A5F002FB4C6 /* BrightnessSliderView.swift */; };
+		9DCB2906248821950025C80A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCB2905248821950025C80A /* AppDelegate.swift */; };
+		9DCB2908248821950025C80A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCB2907248821950025C80A /* SceneDelegate.swift */; };
+		9DCB290F248821970025C80A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DCB290E248821970025C80A /* Assets.xcassets */; };
+		9DCB2912248821970025C80A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DCB2910248821970025C80A /* LaunchScreen.storyboard */; };
+		9DCB291A248821AC0025C80A /* QRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCB2917248821AC0025C80A /* QRCodeViewController.swift */; };
+		9DCB291B248821AC0025C80A /* QRCodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCB2918248821AC0025C80A /* QRCodeModel.swift */; };
+		9DCB291C248821AC0025C80A /* QRCodeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCB2919248821AC0025C80A /* QRCodeBuilder.swift */; };
+		9DCB291F248821DA0025C80A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DCB291D248821DA0025C80A /* Main.storyboard */; };
+		9DCB29212488222A0025C80A /* TelegramColorPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D2D84E5248798BB002FB4C6 /* TelegramColorPicker.framework */; };
+		9DCB29222488222A0025C80A /* TelegramColorPicker.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9D2D84E5248798BB002FB4C6 /* TelegramColorPicker.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9DCB29232488222A0025C80A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9D2D84DC248798BB002FB4C6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9D2D84E4248798BB002FB4C6;
+			remoteInfo = TelegramColorPicker;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9DCB29252488222A0025C80A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9DCB29222488222A0025C80A /* TelegramColorPicker.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		9D2D84E5248798BB002FB4C6 /* TelegramColorPicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TelegramColorPicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -28,6 +62,16 @@
 		9D2D850D24879A2B002FB4C6 /* TelegramColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelegramColorPicker.swift; sourceTree = "<group>"; };
 		9D2D850F24879A49002FB4C6 /* ColorPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerView.swift; sourceTree = "<group>"; };
 		9D2D851124879A5F002FB4C6 /* BrightnessSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrightnessSliderView.swift; sourceTree = "<group>"; };
+		9DCB2903248821950025C80A /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9DCB2905248821950025C80A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9DCB2907248821950025C80A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		9DCB290E248821970025C80A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9DCB2911248821970025C80A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9DCB2913248821970025C80A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9DCB2917248821AC0025C80A /* QRCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeViewController.swift; sourceTree = "<group>"; };
+		9DCB2918248821AC0025C80A /* QRCodeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeModel.swift; sourceTree = "<group>"; };
+		9DCB2919248821AC0025C80A /* QRCodeBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeBuilder.swift; sourceTree = "<group>"; };
+		9DCB291E248821DA0025C80A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,14 +82,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9DCB2900248821950025C80A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9DCB29212488222A0025C80A /* TelegramColorPicker.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		9D2D84DB248798BB002FB4C6 = {
 			isa = PBXGroup;
 			children = (
+				9DCB2904248821950025C80A /* Example */,
 				9D2D84E7248798BB002FB4C6 /* Sources */,
 				9D2D84E6248798BB002FB4C6 /* Products */,
+				9DCB29202488222A0025C80A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -53,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				9D2D84E5248798BB002FB4C6 /* TelegramColorPicker.framework */,
+				9DCB2903248821950025C80A /* Example.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -97,6 +152,29 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		9DCB2904248821950025C80A /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				9DCB2905248821950025C80A /* AppDelegate.swift */,
+				9DCB2907248821950025C80A /* SceneDelegate.swift */,
+				9DCB2919248821AC0025C80A /* QRCodeBuilder.swift */,
+				9DCB2918248821AC0025C80A /* QRCodeModel.swift */,
+				9DCB2917248821AC0025C80A /* QRCodeViewController.swift */,
+				9DCB291D248821DA0025C80A /* Main.storyboard */,
+				9DCB290E248821970025C80A /* Assets.xcassets */,
+				9DCB2910248821970025C80A /* LaunchScreen.storyboard */,
+				9DCB2913248821970025C80A /* Info.plist */,
+			);
+			path = Example;
+			sourceTree = "<group>";
+		};
+		9DCB29202488222A0025C80A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -129,18 +207,41 @@
 			productReference = 9D2D84E5248798BB002FB4C6 /* TelegramColorPicker.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		9DCB2902248821950025C80A /* Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9DCB2916248821970025C80A /* Build configuration list for PBXNativeTarget "Example" */;
+			buildPhases = (
+				9DCB28FF248821950025C80A /* Sources */,
+				9DCB2900248821950025C80A /* Frameworks */,
+				9DCB2901248821950025C80A /* Resources */,
+				9DCB29252488222A0025C80A /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9DCB29242488222A0025C80A /* PBXTargetDependency */,
+			);
+			name = Example;
+			productName = Example;
+			productReference = 9DCB2903248821950025C80A /* Example.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		9D2D84DC248798BB002FB4C6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 1140;
 				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = "Kirill Pustovalov";
 				TargetAttributes = {
 					9D2D84E4248798BB002FB4C6 = {
 						CreatedOnToolsVersion = 11.4;
 						LastSwiftMigration = 1140;
+					};
+					9DCB2902248821950025C80A = {
+						CreatedOnToolsVersion = 11.4;
 					};
 				};
 			};
@@ -158,6 +259,7 @@
 			projectRoot = "";
 			targets = (
 				9D2D84E4248798BB002FB4C6 /* TelegramColorPicker */,
+				9DCB2902248821950025C80A /* Example */,
 			);
 		};
 /* End PBXProject section */
@@ -167,6 +269,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9DCB2901248821950025C80A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9DCB291F248821DA0025C80A /* Main.storyboard in Resources */,
+				9DCB2912248821970025C80A /* LaunchScreen.storyboard in Resources */,
+				9DCB290F248821970025C80A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,7 +299,46 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9DCB28FF248821950025C80A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9DCB2906248821950025C80A /* AppDelegate.swift in Sources */,
+				9DCB291B248821AC0025C80A /* QRCodeModel.swift in Sources */,
+				9DCB291C248821AC0025C80A /* QRCodeBuilder.swift in Sources */,
+				9DCB291A248821AC0025C80A /* QRCodeViewController.swift in Sources */,
+				9DCB2908248821950025C80A /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9DCB29242488222A0025C80A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9D2D84E4248798BB002FB4C6 /* TelegramColorPicker */;
+			targetProxy = 9DCB29232488222A0025C80A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9DCB2910248821970025C80A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9DCB2911248821970025C80A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		9DCB291D248821DA0025C80A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9DCB291E248821DA0025C80A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		9D2D84EB248798BB002FB4C6 /* Debug */ = {
@@ -361,6 +512,42 @@
 			};
 			name = Release;
 		};
+		9DCB2914248821970025C80A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = A46C2G8GT3;
+				INFOPLIST_FILE = Example/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = IrelDev.Example;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9DCB2915248821970025C80A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = A46C2G8GT3;
+				INFOPLIST_FILE = Example/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = IrelDev.Example;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -378,6 +565,15 @@
 			buildConfigurations = (
 				9D2D84EE248798BB002FB4C6 /* Debug */,
 				9D2D84EF248798BB002FB4C6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9DCB2916248821970025C80A /* Build configuration list for PBXNativeTarget "Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9DCB2914248821970025C80A /* Debug */,
+				9DCB2915248821970025C80A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
