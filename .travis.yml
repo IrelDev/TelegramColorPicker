@@ -1,4 +1,4 @@
 language: objective-c
 xcode_project: TelegramColorPicker.xcodeproj
 xcode_scheme: TelegramColorPicker
-xcode_destination: platform = iOS Simulator, OS = 10.0, name = iPhone X
+xcode_destination: platform=iOS Simulator,OS=11.3,name=iPhone X
