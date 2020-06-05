@@ -12,6 +12,7 @@ import UIKit
     enum Constant: CGFloat {
         case size = 1.0
         case saturation = 2.0
+        case circleSize = 50
     }
     internal weak var delegate: ColorPickerDelegate?
     
@@ -45,23 +46,28 @@ import UIKit
         addGestureRecognizer(gestureRecognizer)
     }
     private func setupCircleLayer() {
-        let circle = UIBezierPath(ovalIn: CGRect(x: 0, y: 0, width: 50, height: 50))
+        let circle = UIBezierPath(ovalIn: CGRect(x: 0, y: 0, width: Constant.circleSize.rawValue, height: Constant.circleSize.rawValue))
         let path = circle.cgPath
         circleLayer.path = path
         circleLayer.lineWidth = 5
         circleLayer.strokeColor = UIColor.white.cgColor
         
         layer.addSublayer(circleLayer)
+    }
+    func calculateSaturation(withY y: CGFloat) -> CGFloat {
+        let saturation = 1 - y / rectHeight
         
-        let initialPoint = CGPoint(x: -1000, y: -1000)
-        moveCircle(to: initialPoint, with: color.cgColor)
+        guard saturation >= 0 else { return 0 }
+        guard saturation <= 1 else { return 1 }
+        
+        return saturation
     }
     public override func draw(_ rect: CGRect) {
         rectHeight = rect.height
         let context = UIGraphicsGetCurrentContext()
         
         for demensionY: CGFloat in stride(from: 0.0 ,to: rectHeight, by: Constant.size.rawValue) {
-            let saturation = 1 - demensionY / rectHeight
+            let saturation = calculateSaturation(withY: demensionY)
             
             for demensionX: CGFloat in stride(from: 0.0 ,to: rect.width, by: Constant.size.rawValue) {
                 let hue = demensionX / rect.width
@@ -71,23 +77,51 @@ import UIKit
                 context!.fill(CGRect(x: demensionX, y: demensionY, width: Constant.size.rawValue, height: Constant.size.rawValue))
             }
         }
+        moveCircleToInitialPosition()
+    }
+    private func moveCircleToInitialPosition() {
+        let initialCirclePoint = CGPoint(x: center.x, y: center.y)
+        let colorAtInitialCirclePoint = getColorAtPoint(point: initialCirclePoint)
+        self.color = colorAtInitialCirclePoint
+        
+        moveCircle(to: initialCirclePoint, with: color.cgColor)
+        circleLocation = circleLayer.position
+        delegate?.colorTouched(sender: nil, withColor: color, atPoint: initialCirclePoint)
     }
     private func moveCircle(to position: CGPoint, with color: CGColor) {
-        circleLocation = position
-        
         guard let shapeBounds = circleLayer.path?.boundingBox else { return }
         let offsetX = shapeBounds.width / 2
         let offsetY = shapeBounds.height / 2
         
-        let offsetPosition = CGPoint(x: position.x - offsetX, y: position.y - offsetY)
+        var newPositionX: CGFloat
+        var newPositionY: CGFloat
+        
+        if shouldRespondToXPoint(x: position.x, offsetX: offsetX) {
+            newPositionX = position.x - offsetX
+        } else {
+            newPositionX = circleLayer.position.x
+        }
+        if shouldRespondToYPoint(y: position.y, offsetY: offsetY) {
+            newPositionY = position.y - offsetY
+        } else {
+            newPositionY = circleLayer.position.y
+        }
+        
+        let newPosition = CGPoint(x: newPositionX, y: newPositionY)
         
         CATransaction.begin()
         CATransaction.setDisableActions(true)
         
-        circleLayer.position = offsetPosition
+        circleLayer.position = newPosition
         circleLayer.fillColor = color
         
         CATransaction.commit()
+    }
+    func shouldRespondToXPoint(x: CGFloat, offsetX: CGFloat) -> Bool {
+        x - offsetX > 0 && x + offsetX < bounds.width
+    }
+    func shouldRespondToYPoint(y: CGFloat, offsetY: CGFloat) -> Bool {
+        y - offsetY > 0 && y + offsetY < bounds.height
     }
     @objc func colorTouched(gestureRecognizer: UILongPressGestureRecognizer) {
         if (gestureRecognizer.state == .began || gestureRecognizer.state == .changed) {
@@ -98,14 +132,15 @@ import UIKit
             self.color = color
             
             moveCircle(to: pointFromGestureRecognizer, with: color.cgColor)
-        
+            
             delegate?.colorTouched(sender: self, withColor: colorAtPoint, atPoint: pointFromGestureRecognizer)
         }
     }
     private func getColorAtPoint(point: CGPoint) -> UIColor {
         let roundedPoint = CGPoint(x: Constant.size.rawValue * CGFloat(Int(point.x / Constant.size.rawValue)),
                                    y: Constant.size.rawValue * CGFloat(Int(point.y / Constant.size.rawValue)))
-        let saturation = 1 - roundedPoint.y / rectHeight
+        let y = roundedPoint.y
+        let saturation = calculateSaturation(withY: y)
         
         let hue = roundedPoint.x / bounds.width
         return UIColor(hue: hue, saturation: saturation, brightness: 1.0, alpha: 1.0)
