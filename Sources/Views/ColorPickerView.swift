@@ -20,7 +20,6 @@ import UIKit
     
     private let circleLayer = CAShapeLayer()
     private var circleLocation: CGPoint?
-    private var rectHeight: CGFloat!
     
     private var brightness: CGFloat = 1.0
     
@@ -55,22 +54,29 @@ import UIKit
         layer.addSublayer(circleLayer)
     }
     func calculateSaturation(withY y: CGFloat) -> CGFloat {
-        let saturation = 1 - y / rectHeight
+        let saturation = 1 - y / bounds.height
         
         guard saturation >= 0 else { return 0 }
         guard saturation <= 1 else { return 1 }
         
         return saturation
     }
+    func calculateHue(withX x: CGFloat) -> CGFloat {
+        let hue = x / bounds.width
+        
+        guard hue >= 0 else { return 0 }
+        guard hue <= 1 else { return 1 }
+        
+        return hue
+    }
     public override func draw(_ rect: CGRect) {
-        rectHeight = rect.height
         let context = UIGraphicsGetCurrentContext()
         
-        for demensionY: CGFloat in stride(from: 0.0 ,to: rectHeight, by: Constant.size.rawValue) {
+        for demensionY: CGFloat in stride(from: 0.0 ,to: rect.height, by: Constant.size.rawValue) {
             let saturation = calculateSaturation(withY: demensionY)
             
             for demensionX: CGFloat in stride(from: 0.0 ,to: rect.width, by: Constant.size.rawValue) {
-                let hue = demensionX / rect.width
+                let hue = calculateHue(withX: demensionX)
                 let color = UIColor(hue: hue, saturation: saturation, brightness: 1.0, alpha: 1.0)
                 
                 context!.setFillColor(color.cgColor)
@@ -140,9 +146,10 @@ import UIKit
         let roundedPoint = CGPoint(x: Constant.size.rawValue * CGFloat(Int(point.x / Constant.size.rawValue)),
                                    y: Constant.size.rawValue * CGFloat(Int(point.y / Constant.size.rawValue)))
         let y = roundedPoint.y
-        let saturation = calculateSaturation(withY: y)
         
-        let hue = roundedPoint.x / bounds.width
+        let saturation = calculateSaturation(withY: y)
+        let hue = calculateHue(withX: roundedPoint.x)
+
         return UIColor(hue: hue, saturation: saturation, brightness: 1.0, alpha: 1.0)
     }
     func brightnessValueChanged(withValue value: Float) {
