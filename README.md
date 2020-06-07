@@ -30,7 +30,7 @@ Create TelegramColorPicker instance then add it as a subview.
 ```swift
 let frame = CGRect(x: .zero, y: .zero, width: 400, height: 250)
 let colorPicker = TelegramColorPicker(frame: frame)
-addSubview(colorPicker)
+view.addSubview(colorPicker)
 ```
 ### Storyboard
 Drag `View` object from the object library and set `TelegramColorPicker` as a custom class in identity inspector.
