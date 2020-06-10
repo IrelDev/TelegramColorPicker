@@ -26,8 +26,9 @@ import UIKit
     func unitedInit() {
         clipsToBounds = true
         backgroundColor = .white
-
-        addViews()
+    }
+    public override func layoutSubviews() {
+         addViews()
     }
     public func getColorUpdate(update: @escaping (ColorPickerView?, NSKeyValueObservedChange<UIColor>) -> Void) {
         observation = colorPicker.observe(\.color, options: [.old, .new], changeHandler: update)
