@@ -21,20 +21,38 @@ pod 'TelegramColorPicker', '~> 1.1.1'
 After that use `pod install` command in your terminal.
 
 ### Manually
-If you prefer not to use any dependency managers, you can integrate TelegramColorPicker into your project manually by copying `Sources` directory into your project.
+If you prefer not to use any dependency managers, you can integrate TelegramColorPicker into your project manually by copying `Sources` directory.
 
 ## Usage
 
 ### Programmatically
-Create TelegramColorPicker instance then add it as a subview.
+Create `TelegramColorPicker` instance then add it as a subview.
 ```swift
 let frame = CGRect(x: .zero, y: .zero, width: 400, height: 250)
 let colorPicker = TelegramColorPicker(frame: frame)
 view.addSubview(colorPicker)
 ```
 ### Storyboard
-Drag `View` object from the object library and set `TelegramColorPicker` as a custom class in identity inspector.
+Drag `UIView` object from the object library and set `TelegramColorPicker` as a custom class in identity inspector.
 Create and connect @IBOutlet with `TelegramColorPicker` type.
+
+### SwiftUI
+Create struct that conforms to `UIViewRepresentable` protocol:
+```swift
+struct TelegramColorPickerRepresentable: UIViewRepresentable {
+    func makeUIView(context: Context) -> TelegramColorPicker {
+        TelegramColorPicker()
+    }
+    func updateUIView(_ uiView: TelegramColorPicker, context: Context) { }
+}
+```
+use it in your `View`:
+```swift
+var body: some View {
+        TelegramColorPickerRepresentable()
+        .frame(width: 400, height: 250, alignment: .center)
+}
+```
 
 ### Get color update
 Use `getColorUpdate` function with your custom closure and don't forget to use `[weak self]` to avoid strong reference cycle.
@@ -42,7 +60,7 @@ Use `getColorUpdate` function with your custom closure and don't forget to use `
 getColorUpdate { [weak self] (_, color) in
            guard let newColor = color.newValue, let hexadecimalColor = newColor.toHex() else { return }
            self?.textLabel.text = hexadecimalColor
-       }
+}
 ```
 ## Example
 This repository contains example where you can [see how](Example/QRCodeViewController.swift) TelegramColorPicker can be used for QRCode foreground color changing.
