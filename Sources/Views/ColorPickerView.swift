@@ -10,7 +10,7 @@ import UIKit
 
 @IBDesignable public class ColorPickerView: UIView, BrightnessPickerDelegate {
     struct Constant {
-        static let size: CGFloat = 1.0
+        static let colorElementSize: CGFloat = 1.0
         static let saturation: CGFloat = 2.0
         static let circleSize: CGFloat = 50.0
         static let minimumColorValue: CGFloat = 0.0
@@ -74,15 +74,15 @@ import UIKit
     public override func draw(_ rect: CGRect) {
         let context = UIGraphicsGetCurrentContext()
         
-        for demensionY: CGFloat in stride(from: 0.0 ,to: rect.height, by: Constant.size) {
+        for demensionY: CGFloat in stride(from: 0.0, to: rect.height, by: Constant.colorElementSize) {
             let saturation = calculateSaturation(withY: demensionY)
             
-            for demensionX: CGFloat in stride(from: 0.0 ,to: rect.width, by: Constant.size) {
+            for demensionX: CGFloat in stride(from: 0.0 ,to: rect.width, by: Constant.colorElementSize) {
                 let hue = calculateHue(withX: demensionX)
                 let color = UIColor(hue: hue, saturation: saturation, brightness: Constant.maximumColorValue, alpha: Constant.maximumColorValue)
                 
                 context!.setFillColor(color.cgColor)
-                context!.fill(CGRect(x: demensionX, y: demensionY, width: Constant.size, height: Constant.size))
+                context!.fill(CGRect(x: demensionX, y: demensionY, width: Constant.colorElementSize, height: Constant.colorElementSize))
             }
         }
         moveCircleToInitialPosition()
@@ -136,22 +136,18 @@ import UIKit
             let pointFromGestureRecognizer = gestureRecognizer.location(in: self)
             
             let colorAtPoint = getColorAtPoint(point: pointFromGestureRecognizer)
-            let color = colorAtPoint.setBrightness(withBrightness: brightness)
-            self.color = color
+            let colorWithBrightness = colorAtPoint.setBrightness(withBrightness: brightness)
+            color = colorWithBrightness
             
-            moveCircle(to: pointFromGestureRecognizer, with: color.cgColor)
+            moveCircle(to: pointFromGestureRecognizer, with: colorWithBrightness.cgColor)
             
             delegate?.colorTouched(sender: self, withColor: colorAtPoint, atPoint: pointFromGestureRecognizer)
         }
     }
     private func getColorAtPoint(point: CGPoint) -> UIColor {
-        let roundedPoint = CGPoint(x: Constant.size * CGFloat(Int(point.x / Constant.size)),
-                                   y: Constant.size * CGFloat(Int(point.y / Constant.size)))
-        let y = roundedPoint.y
+        let hue = calculateHue(withX: point.x)
+        let saturation = calculateSaturation(withY: point.y)
         
-        let saturation = calculateSaturation(withY: y)
-        let hue = calculateHue(withX: roundedPoint.x)
-
         return UIColor(hue: hue, saturation: saturation, brightness: Constant.maximumColorValue, alpha: Constant.maximumColorValue)
     }
     func brightnessValueChanged(withValue value: Float) {
@@ -159,9 +155,9 @@ import UIKit
         guard let location = circleLocation else { return }
         let circleColor = getColorAtPoint(point: location)
         
-        let color = circleColor.setBrightness(withBrightness: brightness)
-        circleLayer.fillColor = color.cgColor
+        let colorWithBrightness = circleColor.setBrightness(withBrightness: brightness)
+        circleLayer.fillColor = colorWithBrightness.cgColor
         
-        self.color = color
+        color = colorWithBrightness
     }
 }
