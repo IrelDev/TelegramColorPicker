@@ -135,7 +135,6 @@ import UIKit
         }
         
         let newPosition = CGPoint(x: newPositionX, y: newPositionY)
-        print(position, newPosition)
         return newPosition
     }
     func shouldRespondToXPoint(x: CGFloat, offset: CGFloat) -> Bool {
