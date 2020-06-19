@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "TelegramColorPicker"
-  s.version      = "1.1.1"
+  s.version      = "1.1.2"
   s.summary      = "Simple telegram style color picker build in swift."
   s.homepage     = "https://github.com/IrelDev/TelegramColorPicker"
   s.swift_version= '5.0'
