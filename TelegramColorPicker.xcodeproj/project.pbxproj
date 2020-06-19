@@ -93,6 +93,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9D00A49E249C776C00024F3A /* QRCode */ = {
+			isa = PBXGroup;
+			children = (
+				9DCB2919248821AC0025C80A /* QRCodeBuilder.swift */,
+				9DCB2918248821AC0025C80A /* QRCodeModel.swift */,
+			);
+			path = QRCode;
+			sourceTree = "<group>";
+		};
 		9D2D84DB248798BB002FB4C6 = {
 			isa = PBXGroup;
 			children = (
@@ -155,10 +164,9 @@
 		9DCB2904248821950025C80A /* Example */ = {
 			isa = PBXGroup;
 			children = (
+				9D00A49E249C776C00024F3A /* QRCode */,
 				9DCB2905248821950025C80A /* AppDelegate.swift */,
 				9DCB2907248821950025C80A /* SceneDelegate.swift */,
-				9DCB2919248821AC0025C80A /* QRCodeBuilder.swift */,
-				9DCB2918248821AC0025C80A /* QRCodeModel.swift */,
 				9DCB2917248821AC0025C80A /* QRCodeViewController.swift */,
 				9DCB291D248821DA0025C80A /* Main.storyboard */,
 				9DCB290E248821970025C80A /* Assets.xcassets */,
