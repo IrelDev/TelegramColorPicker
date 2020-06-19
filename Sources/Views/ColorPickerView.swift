@@ -12,7 +12,8 @@ import UIKit
     struct Constant {
         static let colorElementSize: CGFloat = 1.0
         static let saturation: CGFloat = 2.0
-        static let circleSize: CGFloat = 50.0
+        static let circleLineWidth: CGFloat = 4.0
+        static let circleSize: CGFloat = 40.0
         static let minimumColorValue: CGFloat = 0.0
         static let maximumColorValue: CGFloat = 1.0
     }
@@ -50,7 +51,7 @@ import UIKit
         let circle = UIBezierPath(ovalIn: CGRect(x: 0, y: 0, width: Constant.circleSize, height: Constant.circleSize))
         let path = circle.cgPath
         circleLayer.path = path
-        circleLayer.lineWidth = 5
+        circleLayer.lineWidth = Constant.circleLineWidth
         circleLayer.strokeColor = UIColor.white.cgColor
         
         layer.addSublayer(circleLayer)
@@ -88,48 +89,60 @@ import UIKit
         moveCircleToInitialPosition()
     }
     private func moveCircleToInitialPosition() {
-        let initialCirclePoint = CGPoint(x: center.x, y: center.y)
-        let colorAtInitialCirclePoint = getColorAtPoint(point: initialCirclePoint)
+        let colorAtInitialCirclePoint = getColorAtPoint(point: center)
         self.color = colorAtInitialCirclePoint
         
-        moveCircle(to: initialCirclePoint, with: color.cgColor)
-        delegate?.colorTouched(sender: nil, withColor: color, atPoint: initialCirclePoint)
+        moveCircle(to: center, with: color.cgColor)
+        delegate?.colorTouched(sender: nil, withColor: color, atPoint: center)
     }
     private func moveCircle(to position: CGPoint, with color: CGColor) {
         circleLocation = position
-        guard let shapeBounds = circleLayer.path?.boundingBox else { return }
-        let offsetX = shapeBounds.width / 2
-        let offsetY = shapeBounds.height / 2
-        
-        var newPositionX: CGFloat
-        var newPositionY: CGFloat
-        
-        if shouldRespondToXPoint(x: position.x, offsetX: offsetX) {
-            newPositionX = position.x - offsetX
-        } else {
-            newPositionX = circleLayer.position.x
-        }
-        if shouldRespondToYPoint(y: position.y, offsetY: offsetY) {
-            newPositionY = position.y - offsetY
-        } else {
-            newPositionY = circleLayer.position.y
-        }
-        
-        let newPosition = CGPoint(x: newPositionX, y: newPositionY)
+        let newCirclePosition = calculateNewCirclePosition(withPosition: position)
         
         CATransaction.begin()
         CATransaction.setDisableActions(true)
         
-        circleLayer.position = newPosition
+        circleLayer.position = newCirclePosition
         circleLayer.fillColor = color
         
         CATransaction.commit()
     }
-    func shouldRespondToXPoint(x: CGFloat, offsetX: CGFloat) -> Bool {
-        x - offsetX > 0 && x + offsetX < bounds.width
+    func calculateNewCirclePosition(withPosition position: CGPoint) -> CGPoint {
+        let shapeBounds = Constant.circleSize + Constant.circleLineWidth
+        
+        let offset = shapeBounds / 2
+        
+        let positionX = position.x
+        let positionY = position.y
+        
+        var newPositionX: CGFloat
+        var newPositionY: CGFloat
+        
+        if shouldRespondToXPoint(x: positionX, offset: offset) {
+            newPositionX = positionX - offset
+        } else if positionX > bounds.width - shapeBounds {
+            newPositionX = bounds.width - shapeBounds
+        } else {
+            newPositionX = Constant.circleLineWidth
+        }
+        
+        if shouldRespondToYPoint(y: positionY, offset: offset) {
+            newPositionY = positionY - offset
+        } else if positionY > bounds.height - shapeBounds {
+            newPositionY = bounds.height - shapeBounds
+        } else {
+            newPositionY = Constant.circleLineWidth
+        }
+        
+        let newPosition = CGPoint(x: newPositionX, y: newPositionY)
+        print(position, newPosition)
+        return newPosition
     }
-    func shouldRespondToYPoint(y: CGFloat, offsetY: CGFloat) -> Bool {
-        y - offsetY > 0 && y + offsetY < bounds.height
+    func shouldRespondToXPoint(x: CGFloat, offset: CGFloat) -> Bool {
+        x - offset - Constant.circleLineWidth > 0 && x + offset < bounds.width
+    }
+    func shouldRespondToYPoint(y: CGFloat, offset: CGFloat) -> Bool {
+        y - offset - Constant.circleLineWidth > 0 && y + offset < bounds.height
     }
     @objc func colorTouched(gestureRecognizer: UILongPressGestureRecognizer) {
         if (gestureRecognizer.state == .began || gestureRecognizer.state == .changed) {
