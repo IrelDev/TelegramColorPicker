@@ -14,7 +14,6 @@ import UIKit
     
     private var color: UIColor = .clear
     
-    private let brightnessLayer = CAShapeLayer()
     private let gradientLayer = CAGradientLayer()
     
     override init(frame: CGRect) {
