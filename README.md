@@ -2,7 +2,7 @@
 Simple telegram style color picker build in swift
 
 <p align="center">  
-  <img src = "Assets/Demo.gif" /> <br>
+<img src = "Assets/MacOSDemo.png" />
   <img src = "https://img.shields.io/badge/platform-iOS%2010%2B%20%7C%20macOS%2010.15%2B-lightgrey" />
   <img src = "https://img.shields.io/badge/swift-5.0-orange.svg" />
   <img src = "https://img.shields.io/badge/license-MIT-blue.svg" />
@@ -64,6 +64,10 @@ getColorUpdate { [weak self] (_, color) in
 ```
 ## Example
 This repository contains example where you can [see how](Example/QRCodeViewController.swift) TelegramColorPicker can be used for QRCode foreground color changing.
+
+<p align="center">  
+<img src = "Assets/Demo.gif" />
+</p>
 
 ## License
 TelegramColorPicker is available under the MIT license, see the [LICENSE](LICENSE) file for more information.
