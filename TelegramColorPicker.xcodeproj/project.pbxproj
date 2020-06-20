@@ -72,6 +72,7 @@
 		9DCB2918248821AC0025C80A /* QRCodeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeModel.swift; sourceTree = "<group>"; };
 		9DCB2919248821AC0025C80A /* QRCodeBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeBuilder.swift; sourceTree = "<group>"; };
 		9DCB291E248821DA0025C80A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9DE6D28A249DC7280014785E /* Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Example.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +165,7 @@
 		9DCB2904248821950025C80A /* Example */ = {
 			isa = PBXGroup;
 			children = (
+				9DE6D28A249DC7280014785E /* Example.entitlements */,
 				9D00A49E249C776C00024F3A /* QRCode */,
 				9DCB2905248821950025C80A /* AppDelegate.swift */,
 				9DCB2907248821950025C80A /* SceneDelegate.swift */,
@@ -524,6 +526,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Example/Example.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A46C2G8GT3;
 				INFOPLIST_FILE = Example/Info.plist;
@@ -533,6 +536,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = IrelDev.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -542,6 +546,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Example/Example.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A46C2G8GT3;
 				INFOPLIST_FILE = Example/Info.plist;
@@ -551,6 +556,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = IrelDev.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
