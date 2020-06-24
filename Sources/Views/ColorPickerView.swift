@@ -162,7 +162,7 @@ import UIKit
         
         return UIColor(hue: hue, saturation: saturation, brightness: Constant.maximumColorValue, alpha: Constant.maximumColorValue)
     }
-    func brightnessValueChanged(withValue value: Float) {
+    public func brightnessValueChanged(withValue value: Float) {
         brightness = CGFloat(value)
         guard let location = circleLocation else { return }
         let circleColor = getColorAtPoint(point: location)

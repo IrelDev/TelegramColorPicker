@@ -8,6 +8,6 @@
 
 import UIKit
 
-protocol ColorPickerDelegate: NSObjectProtocol {
+public protocol ColorPickerDelegate: NSObjectProtocol {
     func colorTouched(sender: Any?, withColor color: UIColor, atPoint point: CGPoint)
 }

@@ -79,7 +79,7 @@ import UIKit
             setThumbImage(image, for: state)
         }
     }
-    func colorTouched(sender: Any?, withColor color: UIColor, atPoint point: CGPoint) {
+    public func colorTouched(sender: Any?, withColor color: UIColor, atPoint point: CGPoint) {
         self.color = color
         updateLayer()
     }

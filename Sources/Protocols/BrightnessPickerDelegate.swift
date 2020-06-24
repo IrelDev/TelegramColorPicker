@@ -8,6 +8,6 @@
 
 import UIKit
 
-protocol BrightnessPickerDelegate: NSObjectProtocol {
+public protocol BrightnessPickerDelegate: NSObjectProtocol {
     func brightnessValueChanged(withValue value: Float)
 }
