@@ -1,5 +1,5 @@
 # TelegramColorPicker
-Simple telegram style color picker build in swift
+Simple telegram style color picker built in swift
 
 <p align="center">  
 <img src = "Assets/MacOSDemo.png" />
