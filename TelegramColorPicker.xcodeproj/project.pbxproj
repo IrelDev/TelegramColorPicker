@@ -52,6 +52,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9D018E0024AB8487000F52A2 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		9D018E0124AB8487000F52A2 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		9D2D84E5248798BB002FB4C6 /* TelegramColorPicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TelegramColorPicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D2D84E8248798BB002FB4C6 /* TelegramColorPicker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TelegramColorPicker.h; sourceTree = "<group>"; };
 		9D2D84E9248798BB002FB4C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -106,6 +108,8 @@
 		9D2D84DB248798BB002FB4C6 = {
 			isa = PBXGroup;
 			children = (
+				9D018E0024AB8487000F52A2 /* README.md */,
+				9D018E0124AB8487000F52A2 /* LICENSE */,
 				9DCB2904248821950025C80A /* Example */,
 				9D2D84E7248798BB002FB4C6 /* Sources */,
 				9D2D84E6248798BB002FB4C6 /* Products */,
