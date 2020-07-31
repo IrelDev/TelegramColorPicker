@@ -1,9 +1,9 @@
 # TelegramColorPicker
-Simple telegram style color picker built in Swift & UIKit
+Simple telegram style color picker built with Swift & UIKit
 
 <p align="center">  
 <img src = "Assets/MacOSDemo.png" />
-  <img src = "https://img.shields.io/badge/platform-iOS%2010%2B%20%7C%20macOS%2010.15%2B-lightgrey" />
+  <img src = "https://img.shields.io/badge/platform-iOS%2010%2B%20%7C%20Mac%20Catalyst-lightgrey" />
   <img src = "https://img.shields.io/badge/swift-5.0-orange.svg" />
   <img src = "https://img.shields.io/badge/license-MIT-blue.svg" />
   <img src = "https://img.shields.io/badge/carthage-✔-blue" \>
