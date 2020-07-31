@@ -26,9 +26,10 @@ import UIKit
     func unitedInit() {
         clipsToBounds = true
         backgroundColor = .white
+        addViews()
     }
     public override func layoutSubviews() {
-         addViews()
+        setConstraintsBasedOnViewFrame()
     }
     public func getColorUpdate(update: @escaping (ColorPickerView?, NSKeyValueObservedChange<UIColor>) -> Void) {
         observation = colorPicker.observe(\.color, options: [.old, .new], changeHandler: update)
@@ -44,17 +45,11 @@ import UIKit
         colorPicker.delegate = brightnessPicker
         stackView.addArrangedSubview(colorPicker)
         
-        let colorPickerWidthConstraint: NSLayoutConstraint = colorPicker.widthAnchor.constraint(equalToConstant: bounds.width)
-        
-        colorPickerWidthConstraint.priority = UILayoutPriority(rawValue: 999)
-        colorPickerWidthConstraint.isActive = true
-        
         brightnessPicker.delegate = colorPicker
         stackView.addArrangedSubview(brightnessPicker)
         
         brightnessPicker.translatesAutoresizingMaskIntoConstraints = false
         brightnessPicker.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        brightnessPicker.widthAnchor.constraint(equalToConstant: bounds.width / 1.2).isActive = true
         
         addSubview(stackView)
         
@@ -66,6 +61,14 @@ import UIKit
         let trailingConstraint = NSLayoutConstraint(item: stackView, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1, constant: 0)
         
         addConstraints([bottomConstraint, topConstraint, leadingConstraint, trailingConstraint])
+    }
+    func setConstraintsBasedOnViewFrame() {
+        let colorPickerWidthConstraint: NSLayoutConstraint = colorPicker.widthAnchor.constraint(equalToConstant: bounds.width)
+        
+        colorPickerWidthConstraint.priority = UILayoutPriority(rawValue: 999)
+        colorPickerWidthConstraint.isActive = true
+        
+        brightnessPicker.widthAnchor.constraint(equalToConstant: bounds.width / 1.2).isActive = true
     }
 }
 
