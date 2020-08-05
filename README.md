@@ -35,7 +35,7 @@ If you prefer not to use any dependency managers, you can integrate TelegramColo
 ***
 **Warning**
 
-Sources downloaded directly from the master branch may be unstable, please use sources downloaded from [releases](https://github.com/IrelDev/TelegramColorPicker/releases) page.
+Sources downloaded directly from the master branch may be unstable, please download sources from [releases](https://github.com/IrelDev/TelegramColorPicker/releases) page.
 ***
 
 ## Usage
