@@ -30,7 +30,13 @@ github "IrelDev/TelegramColorPicker"
 After that use `carthage update` command in your terminal.
 
 ### Manually
-If you prefer not to use any dependency managers, you can integrate TelegramColorPicker into your project manually by copying `Sources` directory.
+If you prefer not to use any dependency managers, you can integrate TelegramColorPicker into your project manually by downloading the desired release and copying the `Sources` directory.
+
+***
+**Warning**
+
+Sources downloaded directly from the master branch may be unstable, please use sources downloaded from [releases](https://github.com/IrelDev/TelegramColorPicker/releases) page.
+***
 
 ## Usage
 
