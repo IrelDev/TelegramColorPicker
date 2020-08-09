@@ -6,6 +6,7 @@
 //  Copyright © 2020 Kirill Pustovalov. All rights reserved.
 //
 
+#if os(iOS)
 import UIKit
 
 struct Constants {
@@ -16,3 +17,4 @@ struct Constants {
     static let minimumColorValue: CGFloat = 0.0
     static let maximumColorValue: CGFloat = 1.0
 }
+#endif

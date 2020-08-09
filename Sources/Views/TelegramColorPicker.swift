@@ -6,6 +6,7 @@
 //  Copyright © 2020 Kirill Pustovalov. All rights reserved.
 //
 
+#if os(iOS)
 import Foundation
 import UIKit
 
@@ -72,4 +73,4 @@ import UIKit
         brightnessPicker.widthAnchor.constraint(equalToConstant: bounds.width / 1.2).isActive = true
     }
 }
-
+#endif

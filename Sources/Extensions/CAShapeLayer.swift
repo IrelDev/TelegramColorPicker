@@ -6,6 +6,7 @@
 //  Copyright © 2020 Kirill Pustovalov. All rights reserved.
 //
 
+#if os(iOS)
 import UIKit
 
 extension CAShapeLayer {
@@ -19,3 +20,4 @@ extension CAShapeLayer {
         return UIGraphicsGetImageFromCurrentImageContext()
     }
 }
+#endif

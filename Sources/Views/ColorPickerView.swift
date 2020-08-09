@@ -6,6 +6,7 @@
 //  Copyright © 2020 Kirill Pustovalov. All rights reserved.
 //
 
+#if os(iOS)
 import UIKit
 
 @IBDesignable public class ColorPickerView: UIView, BrightnessPickerDelegate {
@@ -166,3 +167,4 @@ import UIKit
         color = colorWithBrightness
     }
 }
+#endif

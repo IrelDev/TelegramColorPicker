@@ -6,6 +6,7 @@
 //  Copyright © 2020 Kirill Pustovalov. All rights reserved.
 //
 
+#if os(iOS)
 import Foundation
 import UIKit
 
@@ -88,3 +89,4 @@ import UIKit
         delegate?.brightnessValueChanged(withValue: value)
     }
 }
+#endif

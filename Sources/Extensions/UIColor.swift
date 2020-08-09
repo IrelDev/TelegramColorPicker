@@ -6,6 +6,7 @@
 //  Copyright © 2020 Kirill Pustovalov. All rights reserved.
 //
 
+#if os(iOS)
 import UIKit
 
 extension UIColor {
@@ -32,3 +33,4 @@ extension UIColor {
         return "#\(String(format: "%02lX%02lX%02lX", red, green, blue))"
     }
 }
+#endif

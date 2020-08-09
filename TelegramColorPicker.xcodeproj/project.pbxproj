@@ -26,8 +26,8 @@
 		9DCB29212488222A0025C80A /* TelegramColorPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D2D84E5248798BB002FB4C6 /* TelegramColorPicker.framework */; };
 		9DCB29222488222A0025C80A /* TelegramColorPicker.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9D2D84E5248798BB002FB4C6 /* TelegramColorPicker.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C2A98D5824E00138006F09CE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A98D5724E00138006F09CE /* Constants.swift */; };
-		C2A98D6024E00164006F09CE /* UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A98D5F24E00164006F09CE /* UITests.swift */; };
-		C2A98D6824E0018A006F09CE /* UnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A98D6724E0018A006F09CE /* UnitTests.swift */; };
+		C2EFE44E24E019F9008607EA /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2EFE44D24E019F9008607EA /* Tests.swift */; };
+		C2EFE45024E019F9008607EA /* TelegramColorPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D2D84E5248798BB002FB4C6 /* TelegramColorPicker.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,12 +38,19 @@
 			remoteGlobalIDString = 9D2D84E4248798BB002FB4C6;
 			remoteInfo = TelegramColorPicker;
 		};
-		C2A98D6224E00164006F09CE /* PBXContainerItemProxy */ = {
+		C26D32B524E01A2400651FAC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9D2D84DC248798BB002FB4C6 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 9DCB2902248821950025C80A;
 			remoteInfo = Example;
+		};
+		C2EFE45124E019F9008607EA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9D2D84DC248798BB002FB4C6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9D2D84E4248798BB002FB4C6;
+			remoteInfo = TelegramColorPicker;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -86,10 +93,9 @@
 		9DCB291E248821DA0025C80A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9DE6D28A249DC7280014785E /* Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Example.entitlements; sourceTree = "<group>"; };
 		C2A98D5724E00138006F09CE /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		C2A98D5D24E00164006F09CE /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C2A98D5F24E00164006F09CE /* UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITests.swift; sourceTree = "<group>"; };
-		C2A98D6124E00164006F09CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C2A98D6724E0018A006F09CE /* UnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTests.swift; sourceTree = "<group>"; };
+		C2EFE44B24E019F9008607EA /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2EFE44D24E019F9008607EA /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
+		C2EFE44F24E019F9008607EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,10 +114,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C2A98D5A24E00164006F09CE /* Frameworks */ = {
+		C2EFE44824E019F9008607EA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2EFE45024E019F9008607EA /* TelegramColorPicker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,7 +141,7 @@
 				9D018E0124AB8487000F52A2 /* LICENSE */,
 				9DCB2904248821950025C80A /* Example */,
 				9D2D84E7248798BB002FB4C6 /* Sources */,
-				C2A98D5E24E00164006F09CE /* Tests */,
+				C2EFE44C24E019F9008607EA /* Tests */,
 				9D2D84E6248798BB002FB4C6 /* Products */,
 				9DCB29202488222A0025C80A /* Frameworks */,
 			);
@@ -145,7 +152,7 @@
 			children = (
 				9D2D84E5248798BB002FB4C6 /* TelegramColorPicker.framework */,
 				9DCB2903248821950025C80A /* Example.app */,
-				C2A98D5D24E00164006F09CE /* Tests.xctest */,
+				C2EFE44B24E019F9008607EA /* Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -214,12 +221,11 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		C2A98D5E24E00164006F09CE /* Tests */ = {
+		C2EFE44C24E019F9008607EA /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				C2A98D6724E0018A006F09CE /* UnitTests.swift */,
-				C2A98D5F24E00164006F09CE /* UITests.swift */,
-				C2A98D6124E00164006F09CE /* Info.plist */,
+				C2EFE44D24E019F9008607EA /* Tests.swift */,
+				C2EFE44F24E019F9008607EA /* Info.plist */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -275,23 +281,24 @@
 			productReference = 9DCB2903248821950025C80A /* Example.app */;
 			productType = "com.apple.product-type.application";
 		};
-		C2A98D5C24E00164006F09CE /* Tests */ = {
+		C2EFE44A24E019F9008607EA /* Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C2A98D6424E00164006F09CE /* Build configuration list for PBXNativeTarget "Tests" */;
+			buildConfigurationList = C2EFE45324E019F9008607EA /* Build configuration list for PBXNativeTarget "Tests" */;
 			buildPhases = (
-				C2A98D5924E00164006F09CE /* Sources */,
-				C2A98D5A24E00164006F09CE /* Frameworks */,
-				C2A98D5B24E00164006F09CE /* Resources */,
+				C2EFE44724E019F9008607EA /* Sources */,
+				C2EFE44824E019F9008607EA /* Frameworks */,
+				C2EFE44924E019F9008607EA /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				C2A98D6324E00164006F09CE /* PBXTargetDependency */,
+				C2EFE45224E019F9008607EA /* PBXTargetDependency */,
+				C26D32B624E01A2400651FAC /* PBXTargetDependency */,
 			);
 			name = Tests;
 			productName = Tests;
-			productReference = C2A98D5D24E00164006F09CE /* Tests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
+			productReference = C2EFE44B24E019F9008607EA /* Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -310,7 +317,7 @@
 					9DCB2902248821950025C80A = {
 						CreatedOnToolsVersion = 11.4;
 					};
-					C2A98D5C24E00164006F09CE = {
+					C2EFE44A24E019F9008607EA = {
 						CreatedOnToolsVersion = 12.0;
 						TestTargetID = 9DCB2902248821950025C80A;
 					};
@@ -331,7 +338,7 @@
 			targets = (
 				9D2D84E4248798BB002FB4C6 /* TelegramColorPicker */,
 				9DCB2902248821950025C80A /* Example */,
-				C2A98D5C24E00164006F09CE /* Tests */,
+				C2EFE44A24E019F9008607EA /* Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -354,7 +361,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C2A98D5B24E00164006F09CE /* Resources */ = {
+		C2EFE44924E019F9008607EA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -391,12 +398,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C2A98D5924E00164006F09CE /* Sources */ = {
+		C2EFE44724E019F9008607EA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C2A98D6024E00164006F09CE /* UITests.swift in Sources */,
-				C2A98D6824E0018A006F09CE /* UnitTests.swift in Sources */,
+				C2EFE44E24E019F9008607EA /* Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,10 +414,15 @@
 			target = 9D2D84E4248798BB002FB4C6 /* TelegramColorPicker */;
 			targetProxy = 9DCB29232488222A0025C80A /* PBXContainerItemProxy */;
 		};
-		C2A98D6324E00164006F09CE /* PBXTargetDependency */ = {
+		C26D32B624E01A2400651FAC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 9DCB2902248821950025C80A /* Example */;
-			targetProxy = C2A98D6224E00164006F09CE /* PBXContainerItemProxy */;
+			targetProxy = C26D32B524E01A2400651FAC /* PBXContainerItemProxy */;
+		};
+		C2EFE45224E019F9008607EA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9D2D84E4248798BB002FB4C6 /* TelegramColorPicker */;
+			targetProxy = C2EFE45124E019F9008607EA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -648,10 +659,9 @@
 			};
 			name = Release;
 		};
-		C2A98D6524E00164006F09CE /* Debug */ = {
+		C2EFE45424E019F9008607EA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A46C2G8GT3;
 				INFOPLIST_FILE = Tests/Info.plist;
@@ -665,14 +675,13 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Example;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Example.app/Example";
 			};
 			name = Debug;
 		};
-		C2A98D6624E00164006F09CE /* Release */ = {
+		C2EFE45524E019F9008607EA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A46C2G8GT3;
 				INFOPLIST_FILE = Tests/Info.plist;
@@ -686,7 +695,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Example;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Example.app/Example";
 			};
 			name = Release;
 		};
@@ -720,11 +729,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C2A98D6424E00164006F09CE /* Build configuration list for PBXNativeTarget "Tests" */ = {
+		C2EFE45324E019F9008607EA /* Build configuration list for PBXNativeTarget "Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C2A98D6524E00164006F09CE /* Debug */,
-				C2A98D6624E00164006F09CE /* Release */,
+				C2EFE45424E019F9008607EA /* Debug */,
+				C2EFE45524E019F9008607EA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

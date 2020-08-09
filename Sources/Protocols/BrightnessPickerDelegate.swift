@@ -6,8 +6,10 @@
 //  Copyright © 2020 Kirill Pustovalov. All rights reserved.
 //
 
+#if os(iOS)
 import UIKit
 
 public protocol BrightnessPickerDelegate: NSObjectProtocol {
     func brightnessValueChanged(withValue value: Float)
 }
+#endif
