@@ -14,7 +14,7 @@
             buildForAnalyzing = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C2A98D5C24E00164006F09CE"
+               BlueprintIdentifier = "C2EFE44A24E019F9008607EA"
                BuildableName = "Tests.xctest"
                BlueprintName = "Tests"
                ReferencedContainer = "container:TelegramColorPicker.xcodeproj">
@@ -32,7 +32,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C2A98D5C24E00164006F09CE"
+               BlueprintIdentifier = "C2EFE44A24E019F9008607EA"
                BuildableName = "Tests.xctest"
                BlueprintName = "Tests"
                ReferencedContainer = "container:TelegramColorPicker.xcodeproj">
@@ -60,7 +60,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C2A98D5C24E00164006F09CE"
+            BlueprintIdentifier = "C2EFE44A24E019F9008607EA"
             BuildableName = "Tests.xctest"
             BlueprintName = "Tests"
             ReferencedContainer = "container:TelegramColorPicker.xcodeproj">
