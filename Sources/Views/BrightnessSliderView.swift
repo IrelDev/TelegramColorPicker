@@ -25,6 +25,7 @@ import UIKit
         unitedInit()
     }
     func unitedInit() {
+        accessibilityIdentifier = "BrightnessSliderView"
         gradientLayer.cornerRadius = 20
         isUserInteractionEnabled = true
         semanticContentAttribute = .forceRightToLeft

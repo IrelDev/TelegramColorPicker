@@ -10,8 +10,8 @@ import Foundation
 import UIKit
 
 @IBDesignable public class TelegramColorPicker: UIView {
-    private let colorPicker = ColorPickerView()
-    private let brightnessPicker = BrightnessSlider()
+    let colorPicker = ColorPickerView()
+    let brightnessPicker = BrightnessSlider()
     
     private var observation: NSKeyValueObservation?
     
@@ -24,6 +24,7 @@ import UIKit
         unitedInit()
     }
     func unitedInit() {
+        accessibilityIdentifier = "TelegramColorPicker"
         clipsToBounds = true
         backgroundColor = .white
         addViews()
