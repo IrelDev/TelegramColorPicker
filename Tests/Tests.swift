@@ -1,5 +1,5 @@
 //
-//  UnitTests.swift
+//  Tests.swift
 //  Tests
 //
 //  Created by Kirill Pustovalov on 09.08.2020.
