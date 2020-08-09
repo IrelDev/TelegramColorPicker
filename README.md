@@ -6,10 +6,10 @@ Simple telegram style color picker built with Swift & UIKit
   <img src = "https://img.shields.io/badge/platform-iOS%2010%2B%20%7C%20Mac%20Catalyst-lightgrey" />
   <img src = "https://img.shields.io/badge/swift-5.0-orange.svg" />
   <img src = "https://img.shields.io/badge/swiftPM-✔-orange" />
-  <img src = "https://img.shields.io/badge/license-MIT-blue.svg" />
-  <img src = "https://img.shields.io/badge/carthage-✔-blue" \>
+  <img src = "https://img.shields.io/badge/carthage-✔-blue" />
   <img src = "https://img.shields.io/badge/cocoapods-✔-green.svg" />
-  <img src = "https://img.shields.io/badge/pod-v1.3-green" \>
+  <img src = "https://img.shields.io/badge/pod-v1.3-green" />
+  <img src = "https://img.shields.io/badge/license-MIT-blue.svg" />
 </p>
 
 ## Installation
