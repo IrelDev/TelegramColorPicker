@@ -25,6 +25,9 @@
 		9DCB291F248821DA0025C80A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DCB291D248821DA0025C80A /* Main.storyboard */; };
 		9DCB29212488222A0025C80A /* TelegramColorPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D2D84E5248798BB002FB4C6 /* TelegramColorPicker.framework */; };
 		9DCB29222488222A0025C80A /* TelegramColorPicker.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9D2D84E5248798BB002FB4C6 /* TelegramColorPicker.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C2A98D5824E00138006F09CE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A98D5724E00138006F09CE /* Constants.swift */; };
+		C2A98D6024E00164006F09CE /* UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A98D5F24E00164006F09CE /* UITests.swift */; };
+		C2A98D6824E0018A006F09CE /* UnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A98D6724E0018A006F09CE /* UnitTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +37,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 9D2D84E4248798BB002FB4C6;
 			remoteInfo = TelegramColorPicker;
+		};
+		C2A98D6224E00164006F09CE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9D2D84DC248798BB002FB4C6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9DCB2902248821950025C80A;
+			remoteInfo = Example;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -75,6 +85,11 @@
 		9DCB2919248821AC0025C80A /* QRCodeBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeBuilder.swift; sourceTree = "<group>"; };
 		9DCB291E248821DA0025C80A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9DE6D28A249DC7280014785E /* Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Example.entitlements; sourceTree = "<group>"; };
+		C2A98D5724E00138006F09CE /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		C2A98D5D24E00164006F09CE /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2A98D5F24E00164006F09CE /* UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITests.swift; sourceTree = "<group>"; };
+		C2A98D6124E00164006F09CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C2A98D6724E0018A006F09CE /* UnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +105,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DCB29212488222A0025C80A /* TelegramColorPicker.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C2A98D5A24E00164006F09CE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +134,7 @@
 				9D018E0124AB8487000F52A2 /* LICENSE */,
 				9DCB2904248821950025C80A /* Example */,
 				9D2D84E7248798BB002FB4C6 /* Sources */,
+				C2A98D5E24E00164006F09CE /* Tests */,
 				9D2D84E6248798BB002FB4C6 /* Products */,
 				9DCB29202488222A0025C80A /* Frameworks */,
 			);
@@ -122,6 +145,7 @@
 			children = (
 				9D2D84E5248798BB002FB4C6 /* TelegramColorPicker.framework */,
 				9DCB2903248821950025C80A /* Example.app */,
+				C2A98D5D24E00164006F09CE /* Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -132,6 +156,7 @@
 				9D2D850124879967002FB4C6 /* Extensions */,
 				9D2D85022487996F002FB4C6 /* Protocols */,
 				9D2D850324879975002FB4C6 /* Views */,
+				C2A98D5724E00138006F09CE /* Constants.swift */,
 				9D2D84E8248798BB002FB4C6 /* TelegramColorPicker.h */,
 				9D2D84E9248798BB002FB4C6 /* Info.plist */,
 			);
@@ -189,6 +214,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C2A98D5E24E00164006F09CE /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				C2A98D6724E0018A006F09CE /* UnitTests.swift */,
+				C2A98D5F24E00164006F09CE /* UITests.swift */,
+				C2A98D6124E00164006F09CE /* Info.plist */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -240,14 +275,32 @@
 			productReference = 9DCB2903248821950025C80A /* Example.app */;
 			productType = "com.apple.product-type.application";
 		};
+		C2A98D5C24E00164006F09CE /* Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C2A98D6424E00164006F09CE /* Build configuration list for PBXNativeTarget "Tests" */;
+			buildPhases = (
+				C2A98D5924E00164006F09CE /* Sources */,
+				C2A98D5A24E00164006F09CE /* Frameworks */,
+				C2A98D5B24E00164006F09CE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C2A98D6324E00164006F09CE /* PBXTargetDependency */,
+			);
+			name = Tests;
+			productName = Tests;
+			productReference = C2A98D5D24E00164006F09CE /* Tests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		9D2D84DC248798BB002FB4C6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1140;
-				LastUpgradeCheck = 1140;
+				LastSwiftUpdateCheck = 1200;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Kirill Pustovalov";
 				TargetAttributes = {
 					9D2D84E4248798BB002FB4C6 = {
@@ -256,6 +309,10 @@
 					};
 					9DCB2902248821950025C80A = {
 						CreatedOnToolsVersion = 11.4;
+					};
+					C2A98D5C24E00164006F09CE = {
+						CreatedOnToolsVersion = 12.0;
+						TestTargetID = 9DCB2902248821950025C80A;
 					};
 				};
 			};
@@ -274,6 +331,7 @@
 			targets = (
 				9D2D84E4248798BB002FB4C6 /* TelegramColorPicker */,
 				9DCB2902248821950025C80A /* Example */,
+				C2A98D5C24E00164006F09CE /* Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -296,6 +354,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C2A98D5B24E00164006F09CE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -310,6 +375,7 @@
 				9D2D8507248799A7002FB4C6 /* UIColor.swift in Sources */,
 				9D2D851224879A5F002FB4C6 /* BrightnessSliderView.swift in Sources */,
 				9D2D850B248799D4002FB4C6 /* BrightnessPickerDelegate.swift in Sources */,
+				C2A98D5824E00138006F09CE /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,6 +391,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C2A98D5924E00164006F09CE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2A98D6024E00164006F09CE /* UITests.swift in Sources */,
+				C2A98D6824E0018A006F09CE /* UnitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -332,6 +407,11 @@
 			isa = PBXTargetDependency;
 			target = 9D2D84E4248798BB002FB4C6 /* TelegramColorPicker */;
 			targetProxy = 9DCB29232488222A0025C80A /* PBXContainerItemProxy */;
+		};
+		C2A98D6324E00164006F09CE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9DCB2902248821950025C80A /* Example */;
+			targetProxy = C2A98D6224E00164006F09CE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -381,6 +461,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -444,6 +525,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -566,6 +648,48 @@
 			};
 			name = Release;
 		};
+		C2A98D6524E00164006F09CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = A46C2G8GT3;
+				INFOPLIST_FILE = Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ireldev.Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Example;
+			};
+			name = Debug;
+		};
+		C2A98D6624E00164006F09CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = A46C2G8GT3;
+				INFOPLIST_FILE = Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ireldev.Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Example;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -592,6 +716,15 @@
 			buildConfigurations = (
 				9DCB2914248821970025C80A /* Debug */,
 				9DCB2915248821970025C80A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C2A98D6424E00164006F09CE /* Build configuration list for PBXNativeTarget "Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C2A98D6524E00164006F09CE /* Debug */,
+				C2A98D6624E00164006F09CE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
