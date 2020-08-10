@@ -34,7 +34,7 @@ After that use `carthage update` command in your terminal.
 The [Swift Package Manager](https://swift.org/package-manager/) is a tool for automating the distribution of Swift code and is integrated into the `swift` compiler. To integrate TelegramColorPicker into your Xcode project using Swift Package Manager, specify it in you `Package`:
 
 dependencies: [
-    .package(url: "https://github.com/IrelDev/TelegramColorPicker.git", .upToNextMajor(from: "1.3.0"))
+    .package(url: "https://github.com/IrelDev/TelegramColorPicker.git", .upToNextMinor(from: "1.3.0"))
 ]
 
 ### Manually
