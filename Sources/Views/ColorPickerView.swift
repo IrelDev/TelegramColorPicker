@@ -112,7 +112,7 @@ import UIKit
         var newPositionX: CGFloat
         var newPositionY: CGFloat
         
-        if shouldRespondToXPoint(x: positionX, offset: offset) {
+        if shouldRespondToX(x: positionX, offset: offset) {
             newPositionX = positionX - offset
         } else if positionX > bounds.width - shapeBounds {
             newPositionX = bounds.width - shapeBounds
@@ -120,7 +120,7 @@ import UIKit
             newPositionX = Constants.circleLineWidth
         }
         
-        if shouldRespondToYPoint(y: positionY, offset: offset) {
+        if shouldRespondToY(y: positionY, offset: offset) {
             newPositionY = positionY - offset
         } else if positionY > bounds.height - shapeBounds {
             newPositionY = bounds.height - shapeBounds
@@ -131,10 +131,10 @@ import UIKit
         let newPosition = CGPoint(x: newPositionX, y: newPositionY)
         return newPosition
     }
-    func shouldRespondToXPoint(x: CGFloat, offset: CGFloat) -> Bool {
+    func shouldRespondToX(x: CGFloat, offset: CGFloat) -> Bool {
         x - offset - Constants.circleLineWidth > 0 && x + offset < bounds.width
     }
-    func shouldRespondToYPoint(y: CGFloat, offset: CGFloat) -> Bool {
+    func shouldRespondToY(y: CGFloat, offset: CGFloat) -> Bool {
         y - offset - Constants.circleLineWidth > 0 && y + offset < bounds.height
     }
     @objc func colorTouched(gestureRecognizer: UILongPressGestureRecognizer) {
