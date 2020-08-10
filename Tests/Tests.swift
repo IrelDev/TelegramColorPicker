@@ -9,7 +9,7 @@
 import XCTest
 @testable import TelegramColorPicker
 
-class UnitTests: XCTestCase {
+class Tests: XCTestCase {
     var colorPickerView: ColorPickerView!
 
     override func setUp() {
@@ -30,46 +30,38 @@ class UnitTests: XCTestCase {
         let circleSize = Constants.circleSize + Constants.circleLineWidth
         let circleHalf = (Constants.circleSize + Constants.circleLineWidth) / 2
         
-        let expectedCirclePosition = CGPoint(x: colorPickerView.bounds.width - circleSize, y: circlePositionY - circleHalf)
+        let expectedCirclePositionForPositiveXPoint = CGPoint(x: colorPickerView.bounds.width - circleSize, y: circlePositionY - circleHalf)
         
-        let outOfBoundsPoint = CGPoint(x: 1000, y: circlePositionY)
-        let exactCirclePosition = colorPickerView.calculateNewCirclePosition(withPosition: outOfBoundsPoint)
+        let positiveOutOfBoundsPoint = CGPoint(x: 1000, y: circlePositionY)
+        let exactCirclePositionForPositiveXPoint = colorPickerView.calculateNewCirclePosition(withPosition: positiveOutOfBoundsPoint)
         
-        XCTAssertEqual(expectedCirclePosition, exactCirclePosition)
-    }
-    func testCirclePositionCalculationsWhenXIsNegative() {
-        let circlePositionY = colorPickerView.circleLocation!.y
-        let circleHalf = (Constants.circleSize + Constants.circleLineWidth) / 2
+        XCTAssertEqual(expectedCirclePositionForPositiveXPoint, exactCirclePositionForPositiveXPoint)
         
-        let expectedCirclePosition = CGPoint(x: Constants.circleLineWidth, y: circlePositionY - circleHalf)
+        let expectedCirclePositionForNegativeXPoint = CGPoint(x: Constants.circleLineWidth, y: circlePositionY - circleHalf)
         
-        let outOfBoundsPoint = CGPoint(x: -1000, y: circlePositionY)
-        let exactCirclePosition = colorPickerView.calculateNewCirclePosition(withPosition: outOfBoundsPoint)
+        let negativeOutOfBoundsPoint = CGPoint(x: -1000, y: circlePositionY)
+        let exactCirclePositionForNegativeXPoint = colorPickerView.calculateNewCirclePosition(withPosition: negativeOutOfBoundsPoint)
         
-        XCTAssertEqual(expectedCirclePosition, exactCirclePosition)
-    }
-    func testCirclePositionCalculationsWhenYIsNegative() {
-        let circlePositionX = colorPickerView.circleLocation!.x
-        let circleHalf = (Constants.circleSize + Constants.circleLineWidth) / 2
-        
-        let expectedCirclePosition = CGPoint(x: circlePositionX - circleHalf, y: Constants.circleLineWidth)
-        
-        let outOfBoundsPoint = CGPoint(x: circlePositionX, y: -1000)
-        let exactCirclePosition = colorPickerView.calculateNewCirclePosition(withPosition: outOfBoundsPoint)
-        
-        XCTAssertEqual(expectedCirclePosition, exactCirclePosition)
+        XCTAssertEqual(expectedCirclePositionForNegativeXPoint, exactCirclePositionForNegativeXPoint)
     }
     func testCirclePositionCalculationsWhenYIsOutOfBounds() {
         let circlePositionX = colorPickerView.circleLocation!.x
-        
+
         let circleSize = Constants.circleSize + Constants.circleLineWidth
         let circleHalf = (Constants.circleSize + Constants.circleLineWidth) / 2
+
+        let expectedCirclePositionForPositveYPoint = CGPoint(x: circlePositionX - circleHalf, y: colorPickerView.bounds.height - circleSize)
+
+        let positveOutOfBoundsPoint = CGPoint(x: circlePositionX, y: 1000)
+        let exactCirclePositionForPositiveYPoint = colorPickerView.calculateNewCirclePosition(withPosition: positveOutOfBoundsPoint)
+
+        XCTAssertEqual(expectedCirclePositionForPositveYPoint, exactCirclePositionForPositiveYPoint)
         
-        let expectedCirclePosition = CGPoint(x: circlePositionX - circleHalf, y: colorPickerView.bounds.height - circleSize)
+        let expectedCirclePositionForNegativeYPoint = CGPoint(x: circlePositionX - circleHalf, y: Constants.circleLineWidth)
         
-        let outOfBoundsPoint = CGPoint(x: circlePositionX, y: 1000)
-        let exactCirclePosition = colorPickerView.calculateNewCirclePosition(withPosition: outOfBoundsPoint)
+        let negativeOutOfBoundsPoint = CGPoint(x: circlePositionX, y: -1000)
+        let exactCirclePositionForNegativeYPoint = colorPickerView.calculateNewCirclePosition(withPosition: negativeOutOfBoundsPoint)
         
-        XCTAssertEqual(expectedCirclePosition, exactCirclePosition)
+        XCTAssertEqual(expectedCirclePositionForNegativeYPoint, exactCirclePositionForNegativeYPoint)
     }
 }
