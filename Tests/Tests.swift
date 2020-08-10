@@ -64,4 +64,34 @@ class Tests: XCTestCase {
         
         XCTAssertEqual(expectedCirclePositionForNegativeYPoint, exactCirclePositionForNegativeYPoint)
     }
+    func testShouldRespondToX() {
+        let circlePositionX = colorPickerView.circleLocation!.x
+        let shapeBounds = Constants.circleSize + Constants.circleLineWidth
+        let offset = shapeBounds / 2
+        
+        let positveOutOfBounds: CGFloat = 1000
+        let negativeOutOfBounds: CGFloat = -1000
+        
+        let correctPoint = circlePositionX
+        
+        XCTAssertFalse(colorPickerView.shouldRespondToX(x: positveOutOfBounds, offset: offset))
+        XCTAssertFalse(colorPickerView.shouldRespondToX(x: negativeOutOfBounds, offset: offset))
+        
+        XCTAssertTrue(colorPickerView.shouldRespondToX(x: correctPoint, offset: offset))
+    }
+    func testShouldRespondToY() {
+        let circlePositionY = colorPickerView.circleLocation!.y
+        let shapeBounds = Constants.circleSize + Constants.circleLineWidth
+        let offset = shapeBounds / 2
+        
+        let positveOutOfBounds: CGFloat = 1000
+        let negativeOutOfBounds: CGFloat = -1000
+        
+        let correctPoint = circlePositionY
+        
+        XCTAssertFalse(colorPickerView.shouldRespondToX(x: positveOutOfBounds, offset: offset))
+        XCTAssertFalse(colorPickerView.shouldRespondToX(x: negativeOutOfBounds, offset: offset))
+        
+        XCTAssertTrue(colorPickerView.shouldRespondToX(x: correctPoint, offset: offset))
+    }
 }
