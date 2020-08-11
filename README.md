@@ -8,7 +8,7 @@ Simple telegram style color picker built with Swift & UIKit
   <img src = "https://img.shields.io/badge/swiftPM-✔-orange" />
   <img src = "https://img.shields.io/badge/carthage-✔-blue" />
   <img src = "https://img.shields.io/badge/cocoapods-✔-green.svg" />
-  <img src = "https://img.shields.io/badge/pod-v1.3.0-green" />
+  <img src = "https://img.shields.io/badge/pod-v1.3.1-green" />
   <img src = "https://img.shields.io/badge/license-MIT-blue.svg" />
 </p>
 
@@ -18,7 +18,7 @@ Simple telegram style color picker built with Swift & UIKit
 [CocoaPods](https://cocoapods.org) is a dependency manager for Cocoa projects. To integrate TelegramColorPicker into your project using CocoaPods, specify it in your `Podfile`:
 
 ```ruby
-pod 'TelegramColorPicker', '~> 1.3.0'
+pod 'TelegramColorPicker', '~> 1.3.1'
 ```
 After that use `pod install` command in your terminal.
 
