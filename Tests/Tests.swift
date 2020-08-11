@@ -89,9 +89,9 @@ class Tests: XCTestCase {
         
         let correctPoint = circlePositionY
         
-        XCTAssertFalse(colorPickerView.shouldRespondToX(x: positveOutOfBounds, offset: offset))
-        XCTAssertFalse(colorPickerView.shouldRespondToX(x: negativeOutOfBounds, offset: offset))
+        XCTAssertFalse(colorPickerView.shouldRespondToY(y: positveOutOfBounds, offset: offset))
+        XCTAssertFalse(colorPickerView.shouldRespondToY(y: negativeOutOfBounds, offset: offset))
         
-        XCTAssertTrue(colorPickerView.shouldRespondToX(x: correctPoint, offset: offset))
+        XCTAssertTrue(colorPickerView.shouldRespondToY(y: correctPoint, offset: offset))
     }
 }
