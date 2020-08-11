@@ -88,5 +88,6 @@ import UIKit
     @objc func brightnessValueChanged() {
         delegate?.brightnessValueChanged(withValue: value)
     }
+    public override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool { true }
 }
 #endif
