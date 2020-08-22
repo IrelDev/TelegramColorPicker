@@ -22,9 +22,9 @@ let package = Package(
             exclude: ["Info.plist"]
         ),
         .testTarget(
-            name: "TelegramColorPickerTests",
+            name: "UnitTests",
             dependencies: ["TelegramColorPicker"],
-            path: "Tests",
+            path: "Tests/UnitTests",
             exclude: ["Info.plist"]
         )
     ],
