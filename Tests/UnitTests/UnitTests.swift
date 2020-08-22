@@ -9,7 +9,7 @@
 import XCTest
 @testable import TelegramColorPicker
 
-class Tests: XCTestCase {
+class UnitTests: XCTestCase {
     var colorPickerView: ColorPickerView!
 
     override func setUp() {
